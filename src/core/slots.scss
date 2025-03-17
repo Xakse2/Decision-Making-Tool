@@ -1,0 +1,110 @@
+@use '../variables.scss' as *;
+
+.wrong-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 50%);
+}
+
+.dialog-wrapper {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background: white;
+}
+
+.outlet {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin: auto;
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  padding: 8px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  list-style: none;
+  background: var(--color-input-background);
+}
+
+.item {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-input-border);
+  font-size: 16px;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.input-item {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--color-text);
+  background: var(--color-input-background);
+  outline: none;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+
+.input-item:focus {
+  border-color: var(--color-button-primary);
+  box-shadow: 0 0 5px rgb(0 123 255 / 50%);
+}
+
+.app-name {
+  font-size: 42px;
+}
+
+.input-field {
+  resize: none;
+  min-width: 420px;
+  max-width: max-content;
+  min-height: 200px;
+}
+
+@media (width <= 450px) {
+  .input-field {
+    min-width: 300px;
+  }
+}

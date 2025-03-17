@@ -1,0 +1,21 @@
+:root {
+  --color-background: #f8f9fa;
+  --color-text: #212529;
+  --color-button-primary: #007bff;
+  --color-button-success: #28a745;
+  --color-button-danger: #dc3545;
+  --color-button-default: #6c757d;
+  --color-input-background: #fff;
+  --color-input-border: #ced4da;
+  --color-label: #495057;
+}
+
+$color-background: var(--color-background);
+$color-text: var(--color-text);
+$color-button-primary: var(--color-button-primary);
+$color-button-success: var(--color-button-success);
+$color-button-danger: var(--color-button-danger);
+$color-button-default: var(--color-button-default);
+$color-input-background: var(--color-input-background);
+$color-input-border: var(--color-input-border);
+$color-label: var(--color-label);

@@ -1,0 +1,35 @@
+@use './slots';
+
+.baraban {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.win-label {
+  font-size: 32px;
+}
+
+.input-time {
+  width: min-content;
+}
+
+.button-sound {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: opacity 0.2s ease-in-out;
+}

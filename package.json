@@ -1,0 +1,49 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/js": "^9.22.0",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.22.0",
+    "eslint-plugin-unicorn": "^57.0.0",
+    "globals": "^16.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3",
+    "sass": "^1.85.1",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.15.0",
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.11.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "stylelint": "stylelint '**/*.{css,scss}'",
+    "prepare": "husky",
+    "format": "prettier --write . --ignore-unknown",
+    "start": "webpack serve --open",
+    "build": "webpack"
+  },
+  "lint-staged": {
+    "**/*.{ts,js}": "eslint --fix",
+    "**/*.{css,scss}": "stylelint --fix",
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
