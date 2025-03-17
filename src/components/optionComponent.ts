@@ -41,6 +41,7 @@ export class OptionComponent extends BaseComponent<'li'> {
     this.weight = new BaseComponent({ className: ['input-item'], tag: 'input' });
     this.weight.element.placeholder = 'weight';
     this.weight.element.type = 'number';
+    this.weight.element.value = this.state.weight ? this.state.weight.toString() : '';
     this.weight.element.addEventListener('change', (): void => {
       this.state.weight = Number(this.weight.element.value);
       p.save();

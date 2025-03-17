@@ -36,19 +36,15 @@ export class Wheel extends BaseComponent<'div'> {
       className: ['button-sound'],
       onClick: (): void => {
         wheel.offSound();
-        if (!wheel.isSoundEnabled()) {
-          soundButton.element.style.backgroundImage = `url(${soundOn})`;
-        } else {
-          soundButton.element.style.backgroundImage = `url(${soundOff})`;
-        }
+        updateSoundButton();
       },
     });
 
-    if (!wheel.isSoundEnabled()) {
-      soundButton.element.style.backgroundImage = `url(${soundOn})`;
-    } else {
-      soundButton.element.style.backgroundImage = `url(${soundOff})`;
-    }
+    const updateSoundButton = (): void => {
+      soundButton.element.style.backgroundImage = `url(${wheel.isSoundEnabled() ? soundOn : soundOff})`;
+    };
+
+    updateSoundButton();
 
     const winLabel = new BaseComponent({
       className: ['win-label'],

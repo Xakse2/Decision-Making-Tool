@@ -146,8 +146,10 @@ export class WheelComponent extends BaseComponent<'canvas'> {
         this.getSectorText(winLabel);
         requestAnimationFrame(animate);
       } else {
-        this.winSound.currentTime = 0;
-        this.winSound.play();
+        if (this.soundEnabled) {
+          this.winSound.currentTime = 0;
+          this.winSound.play();
+        }
       }
     };
 

@@ -12,7 +12,6 @@ export class App extends BaseComponent<'div'> {
     ) {
       router.go('/slots');
     }
-    console.log(window.location.pathname);
     this.append(outlet);
   }
 }
