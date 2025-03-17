@@ -1,13 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: "/Decision-Making-Tool/",
   },
   mode: 'development',
   devServer: {
@@ -24,27 +24,30 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "public/_redirects", to: "" }]
+    })
   ],
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
+        test: /.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(mp3|wav)$/,
+        test: /.(mp3|wav)$/,
         type: 'asset/resource',
         generator: {
           filename: 'assets/sounds/[name][ext]',
         },
       },
       {
-        test: /\.svg$/,
+        test: /.svg$/,
         type: 'asset/resource',
       },
     ],
